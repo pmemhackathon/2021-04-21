@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z $JAVA_HOME ]; then
+	JAVA='java'
+else
+	JAVA=$JAVA_HOME/bin/java
+fi
+
+$JAVA -DPMEM_HOME=/pmem/ -cp .:llpl.jar $*

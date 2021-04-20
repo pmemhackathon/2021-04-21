@@ -1,0 +1,22 @@
+README
+
+The examples in the workshop folder demonstrate use of LLPL in the context of
+some simple data structures.
+
+A_intarray -- a transactional IntArray class
+B_anyintarray -- an IntArray class usable with different consistency schemes
+C_genericrarray -- an Array<T> class usable with different consistency schemes
+D_list -- a linked list class using no object construction when handling nodes
+E_recordlog -- a log class demonstrating MemoryPool, coming in the next release of LLPL
+
+Notes:
+- the scripts in the scripts folder depend on the JAVA_HOME environment variable
+- JAVA_HOME should point to a JDK release, 8 or later
+- executing ./scripts/runall will build all examples and run each of them twice
+  as a test that everything is working
+- examples A-D will run with LLPL master branch or release 1.1 tag; a jar built
+  from master is present in base folder
+- example E requires an experimental LLPL branch (pool_experiment); a jar built
+  from that branch is in the E examples folder and used by the ./scripts/runE script
+- the jar files contain both llpl class files and the llpl.so library; extracting
+  and loading of the .so is automatic

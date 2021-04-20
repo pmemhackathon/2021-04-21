@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$PMEM_HOME" ]
+then
+	echo note: example heaps not deleted, PMEM_HOME not set
+else
+	rm $PMEM_HOME/A_intarray
+	rm $PMEM_HOME/B_anyintarray
+	rm $PMEM_HOME/C_genericarray
+	rm $PMEM_HOME/D_list
+	rm $PMEM_HOME/E_recordlog
+fi

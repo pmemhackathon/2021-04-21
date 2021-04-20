@@ -1,0 +1,23 @@
+#!/bin/bash
+
+./scripts/rmpmem
+./scripts/clean
+./scripts/buildall
+
+./scripts/run workshop.A_intarray.IntArrayExample
+./scripts/run workshop.A_intarray.IntArrayExample
+
+./scripts/run workshop.B_anyintarray.IntArrayExample
+./scripts/run workshop.B_anyintarray.IntArrayExample
+
+./scripts/run workshop.C_genericarray.ArrayExample
+./scripts/run workshop.C_genericarray.ArrayExample
+
+./scripts/run workshop.D_list.ListExample
+./scripts/run workshop.D_list.ListExample
+
+./scripts/runE
+./scripts/runE
+
+# $JAVA -cp .:workshop/E_recordlog/llpl.jar workshop.E_recordlog.RecordLog
+# $JAVA -cp .:workshop/E_recordlog/llpl.jar workshop.E_recordlog.RecordLog

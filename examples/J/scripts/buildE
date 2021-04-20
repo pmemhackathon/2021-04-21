@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z $JAVA_HOME ]; then
+	JAVAC='javac'
+else
+	JAVAC=$JAVA_HOME/bin/javac
+fi
+
+echo compiling...
+$JAVAC -cp .:workshop/E_recordlog/llpl.jar workshop/E_recordlog/*.java 
+
