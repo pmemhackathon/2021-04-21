@@ -14,6 +14,8 @@ rm -f $my_kvfile
 
 # print a value
 ./kv.py $my_kvfile bach
+# print a non-existent value
+./kv.py $my_kvfile chopin
 
 # add some more
 ./kv.py $my_kvfile beethoven 1770-1827

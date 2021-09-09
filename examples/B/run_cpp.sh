@@ -14,6 +14,8 @@ rm -f $my_kvfile
 
 # print a value
 ./pmemkv $my_kvfile bach
+# print a non-existent value
+./pmemkv $my_kvfile chopin
 
 # add some more
 ./pmemkv $my_kvfile beethoven 1770-1827

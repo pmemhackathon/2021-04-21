@@ -35,9 +35,12 @@ if len(sys.argv) == 2:
 
 elif len(sys.argv) == 3:
     # lookup the given key and print the value
-    db.get(sys.argv[2],
-        lambda value:
-        print(f"{sys.argv[2]}=\"{memoryview(value).tobytes().decode()}\""))
+    try:
+        db.get(sys.argv[2],
+            lambda value:
+            print(f"{sys.argv[2]}=\"{memoryview(value).tobytes().decode()}\""))
+    except KeyError:
+        print(f"Key '{sys.argv[2]}' wasn't found in DB")
 
 else:
     # add the given key-value pair

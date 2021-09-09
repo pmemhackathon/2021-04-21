@@ -48,9 +48,11 @@ int main(int argc, char *argv[]) {
 		auto ret = kv->get(argv[2], [&](string_view value) {
 			cout << argv[2] << "=\"" << value.data() << "\"" << endl;
 		});
-		if (ret != status::OK) {
+		if (ret != status::OK && ret != status::NOT_FOUND) {
 			cerr << pmemkv_errormsg() << endl;
 			exit(1);
+		} else if (ret == status::NOT_FOUND) {
+			cout << "Key \"" << argv[2] << "\" wasn't found in DB" << endl;
 		}
 
 	} else {
