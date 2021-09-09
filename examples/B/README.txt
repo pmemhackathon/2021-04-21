@@ -11,7 +11,7 @@ and kv.py program uses the Python language bindings.  The programs
 are very simple, so even people who are not that familiar with C++
 and Python should be able to understand them.
 
-This is example consists of these files:
+This example consists of these files:
 
 pmemkv.cpp   -- simple C++ program using libpmemkv
 kvinit.cpp   -- convenient function for creating/opening the kv store
@@ -23,7 +23,7 @@ run_py.sh    -- script to run the Python version
 To build this example run: make
 To run it and see what it illustrates run: ./run_cpp.sh or ./run_py.sh
 
-Modifying the code and run steps is a great way to learn from this example.
+Modifying the code and running steps is a great way to learn from this example.
 
 This example shows a generic key-value store, called libpmemkv, which
 handles all the details of persistent memory for you.  Each "put"
@@ -38,7 +38,7 @@ This example uses:
 	- the "cmap" persistent memory concurrent hashmap, which uses:
 	- libpmemobj for allocation & transactions, which uses:
 	- libpmem for low-level mapping and flushing, which uses:
-	- a DAX-mounted file system to get direct access to pmem
+	- a DAX-mounted file system to get direct access to pmem.
 
 Although the above stack seems like lots of SW, it is all designed to
 give applications direct access to their data where sits in pmem, rather

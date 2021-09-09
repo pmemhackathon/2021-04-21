@@ -18,6 +18,6 @@ clean:
 	$(RM) *.o core a.out
 
 clobber: clean
-	$(RM) pmemkv
+	$(RM) -r pmemkv __pycache__/
 
 .PHONY: all clean clobber

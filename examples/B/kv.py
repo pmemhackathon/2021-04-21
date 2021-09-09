@@ -11,9 +11,9 @@ def kvprint(key, value):
 
 #
 # this is the main program, used this way:
-#	kv pmemfile           -- print all the keys and values in the pmemfile
-#	kv pmemfile key       -- lookup key and print the value
-#	kv pmemfile key value -- add a key/value pair to the pmemfile
+#	kv.py pmemfile           -- print all the keys and values in the pmemfile
+#	kv.py pmemfile key       -- lookup key and print the value
+#	kv.py pmemfile key value -- add a key/value pair to the pmemfile
 #
 # the pmemfile is created automatically if it doesn't already exist.
 #
@@ -32,11 +32,13 @@ db = pmemkv.Database("cmap", config)
 if len(sys.argv) == 2:
     # iterate through the key-value store, printing them
     db.get_all(kvprint)
+
 elif len(sys.argv) == 3:
     # lookup the given key and print the value
     db.get(sys.argv[2],
         lambda value:
         print(f"{sys.argv[2]}=\"{memoryview(value).tobytes().decode()}\""))
+
 else:
     # add the given key-value pair
     db.put(sys.argv[2], sys.argv[3])

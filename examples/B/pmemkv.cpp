@@ -5,9 +5,8 @@ using namespace pmem::kv;
 using std::cerr;
 using std::cout;
 using std::endl;
-using std::string;
 
-db *must_open_or_create(const char *path);
+db *open_or_create(const char *path);
 
 //
 // kvprint is a callback function to process each key/value pair.  it is
@@ -18,7 +17,6 @@ int kvprint(string_view k, string_view v) {
 
 	cout << k.data() << "=\"" << v.data() << "\"" << endl;
 	return 0;
-
 }
 
 //
@@ -37,7 +35,7 @@ int main(int argc, char *argv[]) {
 		exit(1);
 	}
 
-	db *kv = must_open_or_create(argv[1]);
+	db *kv = open_or_create(argv[1]);
 
 	if (argc == 2) {
 
@@ -51,7 +49,7 @@ int main(int argc, char *argv[]) {
 			cout << argv[2] << "=\"" << value.data() << "\"" << endl;
 		});
 		if (ret != status::OK) {
-			cerr << errormsg() << endl;
+			cerr << pmemkv_errormsg() << endl;
 			exit(1);
 		}
 
@@ -59,10 +57,9 @@ int main(int argc, char *argv[]) {
 
 		// add the given key-value pair
 		if (kv->put(argv[2], argv[3]) != status::OK) {
-			cerr << errormsg() << endl;
+			cerr << pmemkv_errormsg() << endl;
 			exit(1);
 		}
-
 	}
 
 	// stop the pmemkv engine

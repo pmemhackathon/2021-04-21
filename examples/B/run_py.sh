@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 #
-# shell commands to run the C++ version of this example
+# shell commands to run the Python version of this example
 #
 
 # remove file if left over from previous run
