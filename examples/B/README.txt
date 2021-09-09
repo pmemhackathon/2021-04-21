@@ -7,21 +7,28 @@ this example is recommended for everyone since it provides an overview
 of how the most common libraries are used together.
 
 The pmemkv.cpp program uses the C++ language bindings for libpmemkv,
-and kv.py program uses the Python language bindings.  The programs
-are very simple, so even people who are not that familiar with C++
-and Python should be able to understand them.
+kv.py program uses the Python language bindings, and PmemkvExample is
+a simple project using the Java bindings.  The programs are
+very simple, so even people who are not that familiar with C++, Python,
+and Java should be able to understand them.
 
 This example consists of these files:
 
-pmemkv.cpp   -- simple C++ program using libpmemkv
-kvinit.cpp   -- convenient function for creating/opening the kv store
-Makefile     -- rules for building this example
-kv.py        -- simple Python program using libpmemkv
-run_cpp.sh   -- script to run the C++ version
-run_py.sh    -- script to run the Python version
+pmemkv.cpp     -- simple C++ program using libpmemkv
+kvinit.cpp     -- convenient function for creating/opening the kv store
+Makefile       -- rules for building this example
+kv.py          -- simple Python program using libpmemkv
+PmemkvExample/ -- simple Java project with its files:
+	Makefile           -- rules for building the Java example
+	pom.xml            -- project and dependencies configuration
+	PmemkvExample.java -- source file (located in sub-dir src/main/java)
+run_cpp.sh     -- script to run the C++ version
+run_py.sh      -- script to run the Python version
+run_java.sh    -- script to run the Java version
 
 To build this example run: make
-To run it and see what it illustrates run: ./run_cpp.sh or ./run_py.sh
+To run it and see what it illustrates run:
+./run_cpp.sh, ./run_py.sh or ./run_java.sh
 
 Modifying the code and running steps is a great way to learn from this example.
 
