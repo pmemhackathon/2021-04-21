@@ -14,21 +14,27 @@ and Java should be able to understand them.
 
 This example consists of these files:
 
-pmemkv.cpp     -- simple C++ program using libpmemkv
-kvinit.cpp     -- convenient function for creating/opening the kv store
-Makefile       -- rules for building this example
-kv.py          -- simple Python program using libpmemkv
-PmemkvExample/ -- simple Java project with its files:
+pmemkv.cpp        -- simple C++ program using libpmemkv
+kvinit.cpp        -- convenient function for creating/opening the kv store
+Makefile          -- rules for building this example
+kv.py             -- simple Python program using libpmemkv
+PmemkvExample/    -- simple Java project with its files:
 	Makefile           -- rules for building the Java example
 	pom.xml            -- project and dependencies configuration
 	PmemkvExample.java -- source file (located in sub-dir src/main/java)
-run_cpp.sh     -- script to run the C++ version
-run_py.sh      -- script to run the Python version
-run_java.sh    -- script to run the Java version
+run_cpp.sh        -- script to run the C++ version
+run_py.sh         -- script to run the Python version
+run_java.sh       -- script to run the Java version
+run_cross_lang.sh -- script executing all languages alternatively
 
 To build this example run: make
 To run it and see what it illustrates run:
 ./run_cpp.sh, ./run_py.sh or ./run_java.sh
+
+The last script - run_cross_lang.sh - shows how data in the same
+database can be accessed using various programs, even implemented
+in different programming languages.  This will work in pmemkv
+as long as they use the same engine.
 
 Modifying the code and running steps is a great way to learn from this example.
 
