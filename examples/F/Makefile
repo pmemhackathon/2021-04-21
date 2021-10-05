@@ -3,7 +3,7 @@
 #
 PROGS = lowlevel
 CFLAGS = -g -Wall -Werror -std=gnu99
-LIBS = -lpmem
+LIBS = -lpmem2
 
 all: $(PROGS)
 
